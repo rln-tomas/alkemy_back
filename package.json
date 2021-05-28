@@ -1,19 +1,14 @@
 {
-  "name": "alkemy_back",
-  "version": "1.0.0",
-  "description": "This is a JS challenge for Alkemy",
-  "main": "index.js",
+  "name": "alkemy-back",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rln-tomas/alkemy_back.git"
-  },
-  "author": "Tomás Ezequiel Rolón",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rln-tomas/alkemy_back/issues"
-  },
-  "homepage": "https://github.com/rln-tomas/alkemy_back#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
+  }
 }
