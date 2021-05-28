@@ -1,0 +1,19 @@
+{
+  "name": "alkemy_back",
+  "version": "1.0.0",
+  "description": "This is a JS challenge for Alkemy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rln-tomas/alkemy_back.git"
+  },
+  "author": "Tomás Ezequiel Rolón",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rln-tomas/alkemy_back/issues"
+  },
+  "homepage": "https://github.com/rln-tomas/alkemy_back#readme"
+}
