@@ -11,21 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Transaction.belongsTo(models.User); 
     }
   };
   Transaction.init({
     concept: DataTypes.STRING,
     date: DataTypes.DATE,
     amount: DataTypes.FLOAT,
-    type: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+    type: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Transaction',
-    timestamps:false
+    timestamps: false
   });
-  Transaction.associate = function(models){
-    Transaction.belongsTo(models.User); 
-  }
   return Transaction;
 };
