@@ -20,13 +20,13 @@ module.exports = {
       type: {
         type: Sequelize.STRING
       },
-      user_id: {
-        type: Sequelize.INTEGER, 
-        onUpdate: "CASCADE", 
-        onDelete: "CASCADE", 
-        references:{
-          model: 'Users', 
-          key: 'id'
+      UserID: {
+        type:Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        references: {
+          model: 'Users',
+          key:'id',
         }
       }
     });
