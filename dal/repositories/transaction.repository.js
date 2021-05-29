@@ -12,9 +12,27 @@ const createTransaction = async (data) => {
     return transactionCreated; 
 }
 
+const get = async (id) => {
+    const transaction = await baseRepository.get(entity,id); 
+    return transaction; 
+}
+
+const deleteTransaction = async (id) => {
+    const transactionDeleted = await baseRepository.destroy(entity, id); 
+    return transactionDeleted; 
+}
+
+const updateTransaction = async (data) => {
+    const transactionUpdated = await baseRepository.update(entity, data); 
+    return transactionUpdated; 
+}
+
 const transactionRepository = {
     getTransactions, 
-    createTransaction
+    createTransaction,
+    get,
+    deleteTransaction,
+    updateTransaction
 }
 
 module.exports = transactionRepository; 
