@@ -45,7 +45,8 @@ const transactionController = {
     getAll, 
     createTransaction,
     get,
-    deleteTransaction
+    deleteTransaction,
+    updateTransaction,
 }
 
 module.exports = transactionController; 
