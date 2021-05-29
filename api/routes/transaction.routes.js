@@ -3,7 +3,9 @@ const { transactionController } = require('../controllers');
 const transactionRouter = express.Router(); 
 
 transactionRouter.get('/', transactionController.getAll); 
+transactionRouter.get('/:id', transactionController.get); 
 transactionRouter.post('/', transactionController.createTransaction); 
+transactionRouter.delete('/:id', transactionController.deleteTransaction); 
 
 
 module.exports = transactionRouter; 
