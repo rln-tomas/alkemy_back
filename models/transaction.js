@@ -2,9 +2,8 @@
 const {
   Model
 } = require('sequelize');
-const transactionRouter = require('../api/routes/transaction.routes');
 module.exports = (sequelize, DataTypes) => {
-  class transaction extends Model {
+  class Transaction extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,17 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      transaction.belongsTo(models.user)
     }
   };
-  transaction.init({
+  Transaction.init({
     concept: DataTypes.STRING,
+    date: DataTypes.DATE,
     amount: DataTypes.FLOAT,
     type: DataTypes.STRING,
-    date: DataTypes.DATE,
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'transaction',
-  }); 
-  return transaction;
+    modelName: 'Transaction',
+    timestamps: false
+  });
+
+  Transaction.associate = function(models){
+    Transaction.belongsTo(models.User); 
+  }
+  return Transaction;
 };
