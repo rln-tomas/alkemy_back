@@ -22,9 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Transaction',
-    timestamps: false
+    timestamps:false
   });
-
   Transaction.associate = function(models){
     Transaction.belongsTo(models.User); 
   }
