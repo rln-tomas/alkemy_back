@@ -52,9 +52,9 @@ const update = async (entity, data) => {
     }
 }
 
-const getByUsername = async (entity, username) => {
+const getByField = async (entity, toWhere) => {
     try{
-        const userDB = await db[entity].findOne({ where: { username: username } });
+        const userDB = await db[entity].findOne({ where: toWhere });
         return userDB; 
     }catch(error){
         console.log(error); 
@@ -68,7 +68,7 @@ const baseRepository = {
     get,
     destroy,
     update,
-    getByUsername
+    getByField
 }
 
 module.exports = baseRepository; 
