@@ -10,6 +10,11 @@ const get = async (id) => {
     return user; 
 }
 
+const getByField = async (toWhere) => {
+    const user = await baseRepository.getByField(entity, toWhere); 
+    return user; 
+}
+
 
 const createUser = async (data) => {
     const userCreated = await baseRepository.create(entity,data); 
@@ -30,6 +35,7 @@ const userRepository = {
     createUser,
     getAll,
     get,
+    getByField,
     deleteUser,
     updateUser
 }

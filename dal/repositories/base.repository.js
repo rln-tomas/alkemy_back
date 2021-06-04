@@ -52,12 +52,23 @@ const update = async (entity, data) => {
     }
 }
 
+const getByField = async (entity, toWhere) => {
+    try{
+        const userDB = await db[entity].findOne({ where: toWhere });
+        return userDB; 
+    }catch(error){
+        console.log(error); 
+        return; 
+    }
+}
+
 const baseRepository = {
     getAll, 
     create,
     get,
     destroy,
-    update
+    update,
+    getByField
 }
 
 module.exports = baseRepository; 
