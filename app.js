@@ -30,7 +30,7 @@ app.use(session(sess));
 
 
 app.use('/users', userRouter);
-app.use('/transaction', transactionRouter); 
+app.use('/transactions', transactionRouter); 
 
 
 module.exports = app;
