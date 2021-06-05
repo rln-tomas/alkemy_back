@@ -5,20 +5,21 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session'); 
 
-const { userRouter, transactionRouter } = require('./api/routes');
+const { userRouter, transactionRouter } =
+require('./api/routes');
 
 const app = express();
 
 const sess = {
-    name: process.env.SESSION_NAME, 
-    secret: process.env.SECRET_KEY,
-    resave: false, 
-    saveUninitialized: true,
-    cookie: {
-        sameSite:true,
-        maxAge: parseInt(process.env.COOKIE_AGE),
-    }
-}
+	name: process.env.SESSION_NAME, 
+	secret: process.env.SECRET_KEY,
+	resave: false, 
+	saveUninitialized: true,
+	cookie: {
+		sameSite:true,
+		maxAge: parseInt(process.env.COOKIE_AGE),
+	}
+};
 
 
 app.use(logger('dev'));
