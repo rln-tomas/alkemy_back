@@ -86,6 +86,7 @@ const login = async (req, res) => {
 			const passwordCompare = await bcrypt.compare(password, userDB.password);
 			if (passwordCompare){
 				const {id, username} = userDB; 
+				user['id'] = id; 
 				const userSess = {id:id, username:username};
 				const token = jwt.sign(userSess, process.env.SECRET_KEY); 
 

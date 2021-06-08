@@ -27,12 +27,18 @@ const updateTransaction = async (data) => {
 	return transactionUpdated; 
 };
 
+const getAllByField = async (toWhere) => {
+	const transactions = await baseRepository.getByField(entity, toWhere);
+	return transactions; 
+};
+
 const transactionRepository = {
 	getTransactions, 
 	createTransaction,
 	get,
 	deleteTransaction,
-	updateTransaction
+	updateTransaction,
+	getAllByField
 };
 
 module.exports = transactionRepository; 

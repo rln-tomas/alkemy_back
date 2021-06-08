@@ -54,8 +54,18 @@ const update = async (entity, data) => {
 
 const getByField = async (entity, toWhere) => {
 	try{
-		const userDB = await db[entity].findOne({ where: toWhere });
-		return userDB; 
+		const result = await db[entity].findOne({ where: toWhere });
+		return result; 
+	}catch(error){
+		console.log(error); 
+		return; 
+	}
+};
+
+const getAllByField = async (entity, toWhere) => {
+	try{
+		const result = await db[entity].find({ where: toWhere }); 
+		return result; 
 	}catch(error){
 		console.log(error); 
 		return; 
@@ -68,7 +78,8 @@ const baseRepository = {
 	get,
 	destroy,
 	update,
-	getByField
+	getByField, 
+	getAllByField
 };
 
 module.exports = baseRepository; 
