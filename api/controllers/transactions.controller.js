@@ -19,6 +19,7 @@ const get = async (req, res) => {
 
 const createTransaction = async (req, res) => {
 	const data = req.body; 
+	data['UserId'] = req.session.user.id;
 	const transactionCreated = await transactionRepository.createTransaction(data); 
 	return res.send({
 		data: transactionCreated

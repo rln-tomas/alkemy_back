@@ -64,7 +64,7 @@ const getByField = async (entity, toWhere) => {
 
 const getAllByField = async (entity, toWhere) => {
 	try{
-		const result = await db[entity].find({ where: toWhere }); 
+		const result = await db[entity].findAll({ where: toWhere }); 
 		return result; 
 	}catch(error){
 		console.log(error); 

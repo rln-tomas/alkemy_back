@@ -28,7 +28,7 @@ const updateTransaction = async (data) => {
 };
 
 const getAllByField = async (toWhere) => {
-	const transactions = await baseRepository.getByField(entity, toWhere);
+	const transactions = await baseRepository.getAllByField(entity, toWhere);
 	return transactions; 
 };
 
