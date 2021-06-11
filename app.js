@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session'); 
+const cors = require('cors'); 
 
 const { userRouter, transactionRouter } =
 require('./api/routes');
@@ -21,7 +22,7 @@ const sess = {
 	}
 };
 
-
+app.use(cors()); 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

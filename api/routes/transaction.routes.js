@@ -4,6 +4,7 @@ const verifyJWT = require('../middlewares/verifyToken');
 const transactionRouter = express.Router(); 
 
 transactionRouter.get('/', verifyJWT, transactionController.getAll); 
+transactionRouter.get('/myTransactions', verifyJWT, transactionController.getByUserID); 
 transactionRouter.get('/:id', verifyJWT, transactionController.get); 
 transactionRouter.post('/', verifyJWT, transactionController.createTransaction); 
 transactionRouter.delete('/:id', verifyJWT, transactionController.deleteTransaction); 
