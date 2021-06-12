@@ -21,3 +21,6 @@ Example:
 ```bash
     npm run start
 ```
+
+## Endpoints: 
+Example for request.rest extension added on the project
